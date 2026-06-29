@@ -1,0 +1,37 @@
+Date : 2026-06-22 19:04:25
+Directory : c:\Users\相澤宗秀\Desktop\node\sample
+Total : 8 files,  466 codes, 58 comments, 46 blanks, all 570 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript JSX |          8 |        466 |         58 |         46 |        570 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                      | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                         |          8 |        466 |         58 |         46 |        570 |
+| sample-ctl-app                                                                            |          8 |        466 |         58 |         46 |        570 |
+| sample-ctl-app\src                                                                        |          8 |        466 |         58 |         46 |        570 |
+| sample-ctl-app\src (Files)                                                                |          1 |         15 |          1 |          0 |         16 |
+| sample-ctl-app\src\components                                                             |          7 |        451 |         57 |         46 |        554 |
+| sample-ctl-app\src\components\layout                                                      |          7 |        451 |         57 |         46 |        554 |
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                  | language       | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\App.tsx                              | TypeScript JSX |         15 |          1 |          0 |         16 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\AplLoginForm.tsx   | TypeScript JSX |         53 |         13 |          8 |         74 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\FormDaialog1.tsx   | TypeScript JSX |        135 |         11 |         11 |        157 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\HeaderBar.tsx      | TypeScript JSX |          9 |          0 |         -1 |          8 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\IscSIGridView.tsx  | TypeScript JSX |        109 |         11 |         10 |        130 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\ProtectedRoute.tsx | TypeScript JSX |         11 |          3 |          3 |         17 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\TableView.tsx      | TypeScript JSX |        117 |         18 |         11 |        146 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\useAuth.tsx        | TypeScript JSX |         17 |          1 |          4 |         22 |
+| Total                                                                                     |                |        466 |         58 |         46 |        570 |
++-------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

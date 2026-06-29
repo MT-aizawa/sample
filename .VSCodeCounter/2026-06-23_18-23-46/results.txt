@@ -1,0 +1,89 @@
+Date : 2026-06-23 18:23:46
+Directory : c:\Users\相澤宗秀\Desktop\node\sample
+Total : 50 files,  23325 codes, 338 comments, 313 blanks, all 23976 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          3 |     19,840 |          0 |          3 |     19,843 |
+| TypeScript JSX     |         39 |      3,365 |        310 |        276 |      3,951 |
+| PostCSS            |          1 |         33 |          0 |          6 |         39 |
+| JSON with Comments |          1 |         26 |          0 |          1 |         27 |
+| Markdown           |          1 |         26 |          0 |         21 |         47 |
+| HTML               |          1 |         20 |         23 |          1 |         44 |
+| TypeScript         |          3 |         14 |          5 |          5 |         24 |
+| SVG                |          1 |          1 |          0 |          0 |          1 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                         | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                            |         50 |     23,325 |        338 |        313 |     23,976 |
+| sample-ctl-app                                                                               |         50 |     23,325 |        338 |        313 |     23,976 |
+| sample-ctl-app (Files)                                                                       |          4 |     19,867 |          0 |         24 |     19,891 |
+| sample-ctl-app\public                                                                        |          2 |         45 |         23 |          2 |         70 |
+| sample-ctl-app\src                                                                           |         44 |      3,413 |        315 |        287 |      4,015 |
+| sample-ctl-app\src (Files)                                                                   |          9 |        190 |          8 |         30 |        228 |
+| sample-ctl-app\src\components                                                                |         26 |      2,946 |        301 |        215 |      3,462 |
+| sample-ctl-app\src\components\layout                                                         |         26 |      2,946 |        301 |        215 |      3,462 |
+| sample-ctl-app\src\pages                                                                     |          9 |        277 |          6 |         42 |        325 |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                     | language           | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\README.md                                   | Markdown           |         26 |          0 |         21 |         47 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\package-lock.json                           | JSON               |     19,765 |          0 |          1 |     19,766 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\package.json                                | JSON               |         50 |          0 |          1 |         51 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\public\index.html                           | HTML               |         20 |         23 |          1 |         44 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\public\manifest.json                        | JSON               |         25 |          0 |          1 |         26 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\App.css                                 | PostCSS            |         33 |          0 |          6 |         39 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\App.test.tsx                            | TypeScript JSX     |          8 |          0 |          2 |         10 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\App.tsx                                 | TypeScript JSX     |         48 |          3 |          5 |         56 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\Data.tsx                                | TypeScript JSX     |         72 |          0 |          8 |         80 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\Accordion1.tsx        | TypeScript JSX     |         36 |          0 |          1 |         37 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\AccordionPeform.tsx   | TypeScript JSX     |         39 |          0 |          1 |         40 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\AplLoginForm.tsx      | TypeScript JSX     |         53 |         13 |          8 |         74 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\AppLayout.tsx         | TypeScript JSX     |        297 |         96 |         23 |        416 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\CombBox1.tsx          | TypeScript JSX     |         50 |          2 |          4 |         56 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\CombBox2.tsx          | TypeScript JSX     |         39 |          1 |          2 |         42 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\DeleteItemConfirm.tsx | TypeScript JSX     |         73 |          1 |          7 |         81 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\DonutsChart3.tsx      | TypeScript JSX     |         63 |          0 |          5 |         68 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\EditDrawer.tsx        | TypeScript JSX     |        104 |          4 |          9 |        117 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\FCGritView.tsx        | TypeScript JSX     |        310 |          1 |         15 |        326 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\FormDaialog1.tsx      | TypeScript JSX     |        135 |         11 |         11 |        157 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\FormDialog.tsx        | TypeScript JSX     |        134 |          4 |         12 |        150 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\HeaderBar.tsx         | TypeScript JSX     |         78 |          0 |         11 |         89 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\IscSIGridView.tsx     | TypeScript JSX     |        421 |         12 |         25 |        458 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\LineChart1.tsx        | TypeScript JSX     |        112 |         36 |         12 |        160 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\LineChart2.tsx        | TypeScript JSX     |        181 |         39 |          9 |        229 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\MessageBar1.tsx       | TypeScript JSX     |         55 |          7 |          3 |         65 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\ProtectedRoute.tsx    | TypeScript JSX     |         11 |          3 |          3 |         17 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\SearchBar.tsx         | TypeScript JSX     |         38 |          0 |          6 |         44 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\SparkLine1.tsx        | TypeScript JSX     |         41 |          0 |          2 |         43 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\StorageInfos.tsx      | TypeScript JSX     |         68 |         35 |          5 |        108 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\StorageUsage.tsx      | TypeScript JSX     |         93 |          0 |          3 |         96 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\TabList1.tsx          | TypeScript JSX     |         26 |          0 |          4 |         30 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\TableView.tsx         | TypeScript JSX     |        429 |         35 |         28 |        492 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\Toast1.tsx            | TypeScript JSX     |         35 |          0 |          2 |         37 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\components\layout\useAuth.tsx           | TypeScript JSX     |         25 |          1 |          4 |         30 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\index.tsx                               | TypeScript JSX     |         14 |          0 |          4 |         18 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\logo.svg                                | SVG                |          1 |          0 |          0 |          1 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\pages\Fc.tsx                            | TypeScript JSX     |         13 |          0 |          2 |         15 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\pages\HostGroup.tsx                     | TypeScript JSX     |          9 |          0 |          2 |         11 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\pages\Iscsi.tsx                         | TypeScript JSX     |         16 |          0 |          3 |         19 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\pages\Monitoring.tsx                    | TypeScript JSX     |         37 |          0 |          6 |         43 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\pages\NotFound.tsx                      | TypeScript JSX     |         11 |          0 |          3 |         14 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\pages\OverView.tsx                      | TypeScript JSX     |         88 |          5 |          7 |        100 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\pages\Provisioning.tsx                  | TypeScript JSX     |         29 |          1 |          4 |         34 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\pages\StorageSystem.tsx                 | TypeScript JSX     |         30 |          0 |          8 |         38 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\pages\Top.tsx                           | TypeScript JSX     |         44 |          0 |          7 |         51 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\react-app-env.d.ts                      | TypeScript         |          0 |          1 |          1 |          2 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\reportWebVitals.ts                      | TypeScript         |         13 |          0 |          3 |         16 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\src\setupTests.ts                           | TypeScript         |          1 |          4 |          1 |          6 |
+| c:\Users\相澤宗秀\Desktop\node\sample\sample-ctl-app\tsconfig.json                               | JSON with Comments |         26 |          0 |          1 |         27 |
+| Total                                                                                        |                    |     23,325 |        338 |        313 |     23,976 |
++----------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
