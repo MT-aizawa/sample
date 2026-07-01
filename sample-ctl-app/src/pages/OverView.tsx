@@ -3,7 +3,7 @@ import Top from './Top'
 import { makeStyles } from '@fluentui/react-components';
 import { DonutChart3 } from '../components/layout/DonutsChart3';
 import StorageUsage from '../components/layout/StorageUsage';
-import { LineChart1 } from '../components/layout/LineChart1';
+import IopsChart from '../components/layout/LineChart1';
 import { LineChart2 } from '../components/layout/LineChart2';
 
 
@@ -87,7 +87,7 @@ function OverView() {
      {/*    <TabList1/>
     */}
         <div className={styles.box3}>
-          IOPS<hr></hr><LineChart1 />
+          IOPS<hr></hr><IopsChart />
         </div>
         <div className={styles.box4}>
           Latency<hr></hr><LineChart2 />

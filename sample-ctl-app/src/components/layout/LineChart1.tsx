@@ -1,161 +1,60 @@
-import * as React from "react";
-import type { JSXElement } from "@fluentui/react-components";
-import type {
-  ChartProps,
-  LineChartDataPoint,
-} from "@fluentui/react-charts";
-import { LineChart, DataVizPalette } from "@fluentui/react-charts";
+import React, { useState, useEffect, useMemo } from "react";
+import { LineChart, LineChartProps } from "@fluentui/react-charts";
 
+interface ChartDataPoint {
+  x: Date;  //Date型で保持　連続値
+  y: number;
+  xAxisCalloutData: string;  //ツールチップ用の時刻文字列
+}
 
-export const LineChart1 = (/* props: LineChartProps */): JSXElement => {
-/*   const [width, setWidth] = React.useState<number>(700);
-  const [height, setHeight] = React.useState<number>(300);
-  const [allowMultipleShapes, setAllowMultipleShapes] =
-    React.useState<boolean>(false); */
-const width = 700;
-const height = 300;
-const allowMultipleShapes = false;
-/*   const _onWidthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setWidth(parseInt(e.target.value, 10));
-  };
+export default function IopsChart() {
+  const MAX_POINTS = 120; // 表示する最大データ数
+  const [dataPoints, setDataPoints] = useState<ChartDataPoint[]>([]);
 
-  const _onHeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setHeight(parseInt(e.target.value, 10));
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDataPoints((prev) => {
+        const now = new Date();
+        const newPoint: ChartDataPoint = {
+           x: now,
+           y: Math.floor(Math.random() * 100),
+           xAxisCalloutData: now.toLocaleString('ja-JP', { hour12: false}), //表示用
+          };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const _onShapeChange = React.useCallback((ev: any) => {
-    setAllowMultipleShapes(ev.currentTarget.checked);
-  }, []); */
-
-  const _getdata = () => {
-    const data: LineChartDataPoint[] = [];
-    const startdate = new Date("2020-03-01T00:00:00.000Z");
-    for (let i = 0; i < 10000; i++) {
-      data.push({
-        x: new Date(startdate).setHours(startdate.getHours() + i),
-        y: 500000,
+        const updated = [...prev, newPoint];
+        return updated.length > MAX_POINTS
+        ? updated.slice(updated.length - MAX_POINTS)
+        : updated;
       });
-    }
-    return data;
-  };
+    }, 1000);
 
-  const _getdata2 = () => {
-    const data: LineChartDataPoint[] = [];
-    const startdate = new Date("2020-03-01T00:00:00.000Z");
-    for (let i = 1000; i < 9000; i++) {
-      data.push({
-        x: new Date(startdate).setHours(startdate.getHours() + i),
-        y: _getY(i),
-      });
-    }
-    return data;
-  };
+    return () => clearInterval(interval);
+  }, []);
 
-  const _getY = (i: number) => {
-    let res: number = 0;
-    const newN = i % 1000;
-    if (newN < 500) {
-      res = newN * newN;
-    } else {
-      res = 1000000 - newN * newN;
-    }
-
-    return res;
-  };
-
-  const rootStyle = { width: `${width}px`, height: `${height}px` };
-  const margins = { left: 35, top: 20, bottom: 35, right: 20 };
-
-  const data: ChartProps = {
-    chartTitle: "Line Chart",
-    lineChartData: [
-      {
-        legend: "From_Legacy_to_O365",
-        data: _getdata(),
-        color: DataVizPalette.color1,
-        onLineClick: () => console.log("From_Legacy_to_O365"),
-        hideNonActiveDots: true,
-        lineOptions: {
-          lineBorderWidth: "4",
-        },
-      },
-      {
-        legend: "All",
-        data: _getdata2(),
-        color: DataVizPalette.success,
-        lineOptions: {
-          lineBorderWidth: "4",
-        },
-      },
-      {
-        legend: "single point",
-        data: [
+  const chartData:LineChartProps['data'] = useMemo(
+    () => ({
+       chartTitle: 'IOPS',
+       lineChartData: [
           {
-            x: new Date("2020-03-05T00:00:00.000Z"),
-            y: 282000,
+             legend: 'IOPS',
+             data: dataPoints,
+             color: 'blue',
           },
-        ],
-
-        color: DataVizPalette.color10,
-      },
-    ],
-  };
+       ],
+    }),
+    [dataPoints]
+  );
 
   return (
-    <>
-    {/*   <div style={{ display: "flex" }}>
-         <label htmlFor="changeWidth_basic">Change Width:</label>
-        <input
-          type="range"
-          value={width}
-          min={200}
-          max={1000}
-          id="changeWidth_Basic"
-          onChange={_onWidthChange}
-          aria-label="Change Width"
-          aria-valuetext={`current value ${width}', Minimum 200 and Maximum 1000`}
-        />
-
-        <label htmlFor="changeHeight_Basic">Change Height:</label>
-        <input
-          type="range"
-          value={height}
-          min={200}
-          max={1000}
-          id="changeHeight_Basic"
-          onChange={_onHeightChange}
-          aria-label="Change Height"
-          aria-valuetext={`current value ${height}', Minimum 200 and Maximum 1000`}
-        />
-
-        <Switch
-          label={
-            allowMultipleShapes
-              ? "Enabled multiple shapes for each line"
-              : "Disabled multiple shapes for each line"
-          }
-          onChange={_onShapeChange}
-          checked={allowMultipleShapes}
-        />
-      </div> */}
-      <div style={rootStyle}>
-        <LineChart
-          culture={
-            typeof window !== "undefined" ? window.navigator.language : "en-us"
-          }
-          data={data}
-          legendsOverflowText={"Overflow Items"}
-          yMinValue={200}
-          yMaxValue={301}
-          height={height}
-          width={width}
-          margins={margins}
-          allowMultipleShapesForPoints={allowMultipleShapes}
-          optimizeLargeData={true}
-          enablePerfOptimization={true}
-        />
-      </div>
-    </>
+    <div style={{ width: 700, height: 400, overflow: "hidden" }}>
+      <LineChart
+        data={chartData}
+        xAxisTickCount={MAX_POINTS}
+        enablePerfOptimization={true}
+        xAxisTitle={'Time HH:MM:SS'}
+        yAxisTitle={'IOPS'}
+        hideLegend={true}
+        tickFormat={'%-I:%M:%S %p'}      />
+    </div>
   );
-};
+}

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Accordion, AccordionItem, AccordionHeader, AccordionPanel } from '@fluentui/react-components';
-import { LineChart1 } from './LineChart1';
+import  IopsChart  from './LineChart1';
 import { LineChart2 } from './LineChart2';
-import { Sparkline1 } from './SparkLine1';
+//import { Sparkline1 } from './SparkLine1';
+import IopsLineSpark from './IopsLineSpark';
 
 export const AccordionPeform = () => {
   return (
@@ -16,7 +17,7 @@ export const AccordionPeform = () => {
         <AccordionHeader><b>IOPS</b></AccordionHeader>
           <AccordionPanel>
             <hr></hr>
-            <LineChart1/>
+            <IopsChart/>
           </AccordionPanel>
       </AccordionItem>
       <AccordionItem value="item value1">
@@ -30,7 +31,7 @@ export const AccordionPeform = () => {
         <AccordionHeader>BandWidht</AccordionHeader>
         <AccordionPanel>
           <hr></hr>
-           <Sparkline1 />
+           <IopsLineSpark />
         </AccordionPanel>
       </AccordionItem>
     </Accordion>
