@@ -47,7 +47,23 @@ const useStyles = makeStyles({
       }
     }
 )
-
+type savingEffect = {
+  "efficiencyDataReduction": number
+};
+type Storage1 = {
+  "modelName": string,
+  "serial": string,
+  "nickname": string,
+  "numberOfTotalVolumes": number,
+  "numberOfFreeDrivers": number,
+  "numberOfTotalServers": number,
+  "totalPhysicalCapacity": number,
+  "totalPoolCapacity": number,
+  "usedPoolCapacity": number,
+  "freePoolCapacity": number,
+  "savingEffect" : savingEffect,
+  "numberOfSnapshots": number,  
+};
 function StorageUsage() {
     const styles=useStyles()
     const useSize ="10 PB"
@@ -58,6 +74,36 @@ function StorageUsage() {
     const system = "---"
     const total = "35 PB"
     const infomationText ="Usage is a Disk Size of StorageSystem"
+      const [data1, setData1] = React.useState<Storage1>();
+      const [loading, setLoading] = React.useState(false);
+      const [error, setError] = React.useState<string | null>(null);
+      const BASE_URL = "http://localhost:5001"
+      const GET_URL = BASE_URL + "/storage/800103"
+      
+      // データ取得関数
+      const fetchData = async () => {
+        setLoading(true);
+        setError(null);
+        try {
+          const res = await fetch(GET_URL);
+          if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+          }
+          const json: Storage1 = await res.json();
+          console.log(json)
+          setData1(json); // 例として最初の5件だけ表示
+        } catch (err) {
+          setError(err instanceof Error ? err.message : "Unknown error");
+        } finally {
+          setLoading(false);
+        }
+      };
+    
+      // 初回マウント時にデータ取得
+      React.useEffect(() => {
+        fetchData();
+      }, []);
+
   return (
     <div>StorageUsage
         <br></br>
@@ -65,12 +111,14 @@ function StorageUsage() {
             <label className={styles.size}>UseSize / FreeSize
                 <hr></hr>
                 <InfoLabel className={styles.labelInfo} info={<div>{infomationText}</div>}>
-                    {useSize} / {freeSize}
+                   {/*  {useSize} / {freeSize} */}
+                    {data1?.usedPoolCapacity} / {data1?.freePoolCapacity}
                 </InfoLabel>
             </label>
             <label className={styles.dr}>Data Reduction
                  <hr></hr>
-                 {dr}
+               {/*   {dr} */}
+                 {data1?.savingEffect.efficiencyDataReduction}
             </label>
             <label className={styles.state}>Status 
                 <hr></hr>
@@ -78,7 +126,7 @@ function StorageUsage() {
             </label>
             <label className={styles.snap}>Snapshots
                  <hr></hr>
-                 {snap}
+                 {data1?.numberOfSnapshots}
             </label>
             <label className={styles.system}>System
                  <hr></hr>
@@ -86,7 +134,7 @@ function StorageUsage() {
             </label>
             <label className={styles.total}>Total
                  <hr></hr>
-                 {total}
+                 {data1?.totalPhysicalCapacity}
             </label>
         </Field>
     </div>

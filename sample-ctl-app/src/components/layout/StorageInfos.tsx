@@ -1,4 +1,4 @@
-import React from '@fluentui/react'
+import React from 'react'
 import {Field,makeStyles} from '@fluentui/react-components'
 import StorageUsage from './StorageUsage';
 import { Storage32Regular } from '@fluentui/react-icons';
@@ -43,19 +43,48 @@ const useStyles = makeStyles({
         
       }
     })
-function StorageInfos() {
-    const styles = useStyles();
-/*     const useSize ="10TB"
-    const freeSize = "500TB"
-    const dr = "1.663"
-    const state = "Healthy"
-    const snap = "30"
-    const system = "---"
-    const total = "1PB"
-    const infomationText ="Usage is a Disk Size of StorageSystem" */
-    const model = "OneBlock 85"
-    const SN = "900109"
 
+type Storage = {
+   "storageDeviceId":string,
+   "model": string,
+   "serialNumber": string,
+   "ip" : string
+}
+/* type Storages[] = {
+    Storage : Storage,
+} */
+
+function StorageInfos() {
+  const [data, setData] = React.useState<Storage[]>([]);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+  const styles = useStyles();
+  const BASE_URL = "http://localhost:5001"
+  const GET_URL = BASE_URL + "/storages"
+  
+  // データ取得関数
+  const fetchData = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch(GET_URL);
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      const json: Storage[] = await res.json();
+      console.log(json)
+      setData(json.slice(0, 5)); // 例として最初の5件だけ表示
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Unknown error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 初回マウント時にデータ取得
+  React.useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <>
     <div className={styles.top}>StorageInfos</div>
@@ -64,12 +93,12 @@ function StorageInfos() {
       <Storage32Regular />
         <label className={styles.size}>Model
             <hr></hr>
-            {model}
+            {data[0]?.model}
         </label>
         <hr></hr>
         <label className={styles.size}>SerialNumber
             <hr></hr>
-            {SN}
+            {data[0]?.serialNumber}
         </label>
     </Field>
     <hr></hr>

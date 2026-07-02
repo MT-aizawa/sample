@@ -1,0 +1,54 @@
+{
+    "storage": [
+        { 
+          "id":"800111",
+          "storageDeviceId": "AA000BBBCCC111",
+          "model": "AB-CD3306",
+          "serialNumber": "800111",
+          "numberOfTotalVolumes": 19,
+          "numberOfFreeDrivers": 5,
+          "numberOfTotalServers": 2,
+          "totalPhysicalCapacity": 500000,
+          "totalPoolCapacity": 3000,
+          "usedPoolCapacity": 2500,
+          "freePoolCapacity": 500,
+          "savingEffect" : { "efficiencyDataReduction": 1.53},
+         "numberOfSnapshots": 24  
+
+        },
+        { 
+          "id":"800103",
+          "storageDeviceId": "BB000BBBCCC222",
+          "model": "ER-CD3947",
+          "serialNumber": "800103",
+          "numberOfTotalVolumes": 26,
+          "numberOfFreeDrivers": 11,
+          "numberOfTotalServers": 4,
+          "totalPhysicalCapacity": 1500000,
+          "totalPoolCapacity": 13000,
+          "usedPoolCapacity": 22500,
+          "freePoolCapacity": 17500,
+          "savingEffect" : { "efficiencyDataReduction": 0.88},
+         "numberOfSnapshots": 32
+        }
+
+    ],
+    "storages":[
+        { "storageDeviceId": "AA000BBBCCC111",
+          "model": "AB-CD3306",
+          "serialNumber": "800102"
+        },
+        { "storageDeviceId": "CC100BBBCCC111",
+          "model": "DD-CD4826",
+          "serialNumber": "900102"
+        }
+    ]
+
+
+
+
+
+
+
+
+}
