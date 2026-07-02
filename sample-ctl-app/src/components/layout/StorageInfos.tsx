@@ -39,8 +39,8 @@ const useStyles = makeStyles({
       labelInfo:{
         marginBottom: "20px",
         backgroundColor:"#white",
-        fontSize:"small"
-        
+        fontSize:"small",
+        display:"flex"
       }
     })
 
@@ -61,7 +61,7 @@ function StorageInfos() {
   const styles = useStyles();
   const BASE_URL = "http://localhost:5001"
   const GET_URL = BASE_URL + "/storages"
-  
+
   // データ取得関数
   const fetchData = async () => {
     setLoading(true);
@@ -89,20 +89,22 @@ function StorageInfos() {
     <>
     <div className={styles.top}>StorageInfos</div>
     <hr></hr>
-    <Field >
+    <Field className={styles.labelInfo}>
       <Storage32Regular />
         <label className={styles.size}>Model
             <hr></hr>
             {data[0]?.model}
         </label>
-        <hr></hr>
         <label className={styles.size}>SerialNumber
             <hr></hr>
             {data[0]?.serialNumber}
         </label>
+        <label className={styles.size}>DeviceID
+            <hr></hr>
+            {data[0]?.storageDeviceId}
+        </label>
     </Field>
-    <hr></hr>
-    <br></br>
+
 {/*     <Field label="Usage" className={styles.root}>
         <hr></hr>
         <label className={styles.size}>UseSize / FreeSize

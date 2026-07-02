@@ -35,7 +35,7 @@ import { FormDialog } from "./FormDialog";
 
 const items = [
    {
-    file: { label: "", icon: <DocumentRegular /> },
+  //  file: { label: "", icon: <DocumentRegular /> },
     name: { label:"LDEV_0001"},
     ID: { label: "256 (0x00FF)" ,link: "https://example.com"},
     Size: { label: "800GB", },
@@ -49,7 +49,7 @@ const items = [
     },
   },
   {
-    file: { label: "", status: "busy",icon: <DocumentCsvRegular /> },
+   // file: { label: "", status: "busy",icon: <DocumentCsvRegular /> },
     name: { label: "LDEV_0002"},
     ID: { label: "1 (0x0001)" ,link: "https://example.com"},
     Size: { label: "500GB", },
@@ -63,7 +63,7 @@ const items = [
     },
   },
   {
-    file: { label: "", icon: <DocumentRegular /> },
+   // file: { label: "", icon: <DocumentRegular /> },
     name: {label: "LDEV_0010"},
     ID: { label: "5 (0x0005)",link: "https://example.com" },
     Size: { label: "100GB", },
@@ -77,7 +77,7 @@ const items = [
     },
   },
   {
-    file: { label: "", icon: <DocumentCsvRegular /> },
+  //  file: { label: "", icon: <DocumentCsvRegular /> },
     name: { label: "TEST_WAC"},
     ID: { label: "10 (0x000a)",link: "https://example.com" },
     Size: { label: "10TB", },
@@ -91,7 +91,7 @@ const items = [
     },
   }, 
      {
-    file: { label: "", icon: <DocumentRegular /> },
+  //  file: { label: "", icon: <DocumentRegular /> },
     name: { label:"LDEV_0201"},
     ID: { label: "513 (0x01FF)" ,link: "https://example.com"},
     Size: { label: "800GB", },
@@ -105,7 +105,7 @@ const items = [
     },
   },
   {
-    file: { label: "", status: "busy",icon: <DocumentCsvRegular /> },
+  //  file: { label: "", status: "busy",icon: <DocumentCsvRegular /> },
     name: { label: "LDEV_0032"},
     ID: { label: "4 (0x0004)" ,link: "https://example.com"},
     Size: { label: "550GB", },
@@ -119,7 +119,7 @@ const items = [
     },
   },
   {
-    file: { label: "", icon: <DocumentRegular /> },
+//file: { label: "", icon: <DocumentRegular /> },
     name: {label: "LDEV_0040"},
     ID: { label: "21 (0x0015)" ,link: "https://example.com"},
     Size: { label: "400GB", },
@@ -133,7 +133,7 @@ const items = [
     },
   },
   {
-    file: { label: "", icon: <DocumentCsvRegular /> },
+  //  file: { label: "", icon: <DocumentCsvRegular /> },
     name: { label: "TEST2_WAC"},
     ID: { label: "11 (0x000b)" ,link: "https://example.com"},
     Size: { label: "5TB", },
@@ -148,8 +148,20 @@ const items = [
   }, 
 ];
 
+type volumes = {
+   "id": number,
+   "nickname": string,
+   "poolId": number,
+   "poolName": string,
+   "totalCapacity": number,
+   "usedCapacity": number,
+   "numberOfCounnectiongServers": number,
+   "numberOfSnapshots": number
+}
+
+
 const columns = [
-  { columnkey: "file", label:"Icon"},
+ // { columnkey: "file", label:"Icon"},
   { columnKey: "name", label: "Name" },
   { columnKey: "ID", label: "ID" },
   { columnKey: "Size", label: "Size" },
@@ -181,10 +193,36 @@ export const TableView = (): JSXElement => {
   const focusableGroupAttr = useFocusableGroup({
     tabBehavior: "limited-trap-focus",
   });
-  const styles = useStyles();
- // function handleOpen() {
-
- // }
+  const [data, setData] = React.useState<volumes[]>([]);
+   const [loading, setLoading] = React.useState(false);
+   const [error, setError] = React.useState<string | null>(null);
+   const styles = useStyles();
+   const BASE_URL = "http://localhost:5001"
+   const GET_URL = BASE_URL + "/volumes"
+   
+   // データ取得関数
+   const fetchData = async () => {
+     setLoading(true);
+     setError(null);
+     try {
+       const res = await fetch(GET_URL);
+       if (!res.ok) {
+         throw new Error(`HTTP error! status: ${res.status}`);
+       }
+       const json: volumes[] = await res.json();
+       console.log(json)
+       setData(json.slice(0, 5)); // 例として最初の5件だけ表示
+     } catch (err) {
+       setError(err instanceof Error ? err.message : "Unknown error");
+     } finally {
+       setLoading(false);
+     }
+   };
+ 
+   // 初回マウント時にデータ取得
+   React.useEffect(() => {
+     fetchData();
+   }, []);
 
   const filteredName = React.useMemo(() => {
     if(!searchName) return items;
@@ -247,11 +285,11 @@ export const TableView = (): JSXElement => {
       <TableBody>
         {currentData.map((filteredName) => (
           <TableRow key={filteredName.name.label}>
-            <TableCell tabIndex={0} role="gridcell">
+          {/*   <TableCell tabIndex={0} role="gridcell">
               <TableCellLayout media={filteredName.file.icon}>
-                {/* {filteredName.name.label} */}
+                {/* {filteredName.name.label} 
               </TableCellLayout>
-            </TableCell>
+            </TableCell> */}
              <TableCell tabIndex={0} role="gridcell">
               <TableCellLayout>
                 {filteredName.name.label}

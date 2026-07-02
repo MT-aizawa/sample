@@ -25,7 +25,7 @@
           "numberOfFreeDrivers": 11,
           "numberOfTotalServers": 4,
           "totalPhysicalCapacity": 1500000,
-          "totalPoolCapacity": 13000,
+          "totalPoolCapacity": 33000,
           "usedPoolCapacity": 22500,
           "freePoolCapacity": 17500,
           "savingEffect" : { "efficiencyDataReduction": 0.88},
@@ -42,6 +42,29 @@
           "model": "DD-CD4826",
           "serialNumber": "900102"
         }
+    ],
+    "volumes":[
+        {
+          "id": 1,
+          "nickname": "LDEV001",
+          "poolId": 0,
+          "poolName": "WAC-Server001",
+          "totalCapacity": 5000000,
+          "usedCapacity": 2999,
+          "numberOfCounnectiongServers": 3,
+          "numberOfSnapshots": 5
+        },
+        {
+          "id": 11,
+          "nickname": "LDEV011",
+          "poolId": 1,
+          "poolName": "WAC-Server002",
+          "totalCapacity": 3000000,
+          "usedCapacity": 299,
+          "numberOfCounnectiongServers": 1,
+          "numberOfSnapshots": 1
+        }
+
     ]
 
 

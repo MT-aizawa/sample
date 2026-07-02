@@ -8,11 +8,8 @@ const useStyles = makeStyles({
          Weight:"semibold"
       },
       root: {
-        marginTop:"0px",
-        marginBottom:"20px",
-        marginRight:"20px",
-        marginLeft:"20px",
-        justifyContent: "center",
+        marginLeft: "20px",
+      //  justifyContent: "center",
         display: "flex",
       },
       size:{
@@ -106,13 +103,14 @@ function StorageUsage() {
 
   return (
     <div>StorageUsage
-        <br></br>
+      <hr></hr>
+      <br></br>
         <Field label="" className={styles.root}>
-            <label className={styles.size}>UseSize / FreeSize
+            <label className={styles.size}>UseSize / FreeSize (Byte)
                 <hr></hr>
                 <InfoLabel className={styles.labelInfo} info={<div>{infomationText}</div>}>
                    {/*  {useSize} / {freeSize} */}
-                    {data1?.usedPoolCapacity} / {data1?.freePoolCapacity}
+                    {data1?.usedPoolCapacity} / {data1?.totalPoolCapacity} 
                 </InfoLabel>
             </label>
             <label className={styles.dr}>Data Reduction
@@ -132,7 +130,7 @@ function StorageUsage() {
                  <hr></hr>
                  {system}
             </label>
-            <label className={styles.total}>Total
+            <label className={styles.total}>Total  (Byte)
                  <hr></hr>
                  {data1?.totalPhysicalCapacity}
             </label>
