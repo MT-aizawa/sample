@@ -10,9 +10,34 @@ interface ChartDataPoint {
 export default function IopsChart() {
   const MAX_POINTS = 120; // 表示する最大データ数
   const [dataPoints, setDataPoints] = useState<ChartDataPoint[]>([]);
+ 
+ /*  useEffect(() => {
+    const ws = new WebSocket("ws://localhost:8080");
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+    ws.onmessage = (event) => {
+      try {
+        const point = JSON.parse(event.data);
+        setDataPoints((prev) =>{ 
+         const updated = [...prev, point];
+          // 最新MAX_POINTS件だけ保持
+          return updated.length > MAX_POINTS
+            ? updated.slice(updated.length - MAX_POINTS)
+            : updated;
+        });
+      } catch (err) {
+        console.error("Invalid WS data", err);
+      }
+    };
+
+    ws.onerror = (err) => {
+      console.error("WebSocket error:", err);
+    };
+
+    return () => ws.close();
+  }, []);
+*/
+   useEffect(() => {  
+     const interval = setInterval(() => {
       setDataPoints((prev) => {
         const now = new Date();
         const newPoint: ChartDataPoint = {
@@ -22,15 +47,17 @@ export default function IopsChart() {
           };
 
         const updated = [...prev, newPoint];
+
         return updated.length > MAX_POINTS
         ? updated.slice(updated.length - MAX_POINTS)
         : updated;
+        
       });
-    }, 1000);
-
+      
+    }, 1000); 
     return () => clearInterval(interval);
-  }, []);
-
+  }, []); 
+ 
   const chartData:LineChartProps['data'] = useMemo(
     () => ({
        chartTitle: 'IOPS',
@@ -46,7 +73,7 @@ export default function IopsChart() {
   );
 
   return (
-    <div style={{ width: 700, height: 400, overflow: "hidden" }}>
+    <div style={{ width: "auto", height: 300}}>
       <LineChart
         data={chartData}
         xAxisTickCount={MAX_POINTS}
