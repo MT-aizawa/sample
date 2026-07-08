@@ -51,6 +51,7 @@ import {
   Person20Filled,
   Person20Regular, */
   Storage32Regular,
+  Map16Regular,
 } from "@fluentui/react-icons";
 import { NavLink, Outlet } from "react-router-dom";
 import HeaderBar from "./HeaderBar";
@@ -179,16 +180,18 @@ const splitNavItemNestedProps: SplitNavItemNestedProps[] = [
       },
     },
   },
-  /*
+
   {
     splitNavItem: {
       navItem: {
-        value: "15",
-        icon: <TrainingPrograms />,
-        children: "Training Programs",
+        value: "8",
+        icon: <Map16Regular />,
+        children: "TopologyMap",
+        href: "/Topology",
       },
     },
   },
+    /*
   {
     navCategory: { value: "16" },
     navCategoryItem: {

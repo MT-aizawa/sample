@@ -15,6 +15,7 @@ import HostGroup from './pages/HostGroup';
 import { ApiLoginForm } from './components/layout/AplLoginForm';
 import { ProtectedRoute } from './components/layout/ProtectedRoute';
 import { useAuth } from './components/layout/useAuth';
+import Topology from './pages/Topology';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
          <Route path="/" element={<AppLayout isAdmin = {isAdmin}/>}>
           <Route index element={<Top {...TopProps} />}/>
            <Route path="/OverView" element={<OverView />}/>
+           <Route path="/Topology" element={<Topology />}/>
            {isAdmin &&<Route path="/Provisioning" element={<Provisioning />}/>}
            <Route path="/StorageSystem" element={<StorageSystem />}/>
            <Route path="/HostGroup" element={<HostGroup />}/>

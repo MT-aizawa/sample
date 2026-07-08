@@ -6,7 +6,6 @@ import StorageUsage from '../components/layout/StorageUsage';
 import IopsChart from '../components/layout/LineChart1';
 import { LineChart2 } from '../components/layout/LineChart2';
 
-
 const useStyles = makeStyles({
         content: {
           display:"flex",
@@ -73,9 +72,9 @@ function OverView() {
   const styles = useStyles();
   return (
     <>
+ 
     <div className={styles.content}>
       <Top {...TopProps}/>
-    
       <div className={styles.grid}>
         <div className={styles.box1}>
           <DonutChart3 />
