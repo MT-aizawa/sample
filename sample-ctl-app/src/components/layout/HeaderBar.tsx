@@ -5,6 +5,7 @@ import { AlertBadgeRegular,  WarningRegular } from '@fluentui/react-icons';
 import { MessageBar1 } from './MessageBar1';
 import { useAuth} from "../layout/useAuth"
 import { useNavigate } from 'react-router-dom';
+import { ExternalLogDownload } from '../FileDownload';
 
 const useStyles = makeStyles({
       root: {
@@ -63,13 +64,14 @@ function handlelogout() {
         <label className={styles.label}>Windows Admin Center</label>
         <SearchBar />
        <div className={styles.button}>
-        <Button size="small" icon={<AlertBadgeRegular/>} 
+        <Button size="small" color="#FFAA44" icon={<AlertBadgeRegular/>} 
         onClick={handleWarnClick}/>
         <Button size="small" icon={<WarningRegular/>}
         onClick={handleInfoClick}/>
         <Button onClick={handlelogout}>ログアウト</Button>
        </div>
        <label className={styles.label}>login : {localStorage.getItem('user')}</label>
+          <ExternalLogDownload/>
     </div>
     {openWarn && <MessageBar1 
          single={true}
